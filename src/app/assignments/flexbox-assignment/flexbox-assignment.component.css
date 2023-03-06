@@ -1,8 +1,8 @@
 /* Add mobile styles for the component here.  */
 FlexboxLayout {
-  border-color: green;
+  border-color: blue;
   border-width: 5;
-  height: 300;
+  height: 200;
 }
 
 Label {
@@ -15,9 +15,9 @@ Label {
 }
 
 #i2 {
-  background: blue;
+  background: orange;
 }
 
 #i3 {
-  background: orange;
+  background: green;
 }

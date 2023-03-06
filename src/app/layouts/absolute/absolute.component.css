@@ -1,8 +1,8 @@
 /* Add mobile styles for the component here.  */
-FlexboxLayout {
+AbsoluteLayout {
   border-color: green;
   border-width: 5;
-  height: 300;
+  height: 100%;
 }
 
 Label {

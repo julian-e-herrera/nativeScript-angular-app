@@ -1,8 +1,17 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ns-app',
-  moduleId:module.id,
-  templateUrl: './app.component.html',
+  moduleId: module.id,
+  templateUrl: './app.component.html'
 })
-export class AppComponent {}
+export class AppComponent {
+  activeChallenge : string= '';
+  // activeChallenge : string[]= [];
+
+  onChallengeInput(challengeDescription: string) {
+    // this.activeChallenge.push(challengeDescription);
+    this.activeChallenge=challengeDescription
+    console.log('onChallengeInput: ', challengeDescription);
+  }
+}

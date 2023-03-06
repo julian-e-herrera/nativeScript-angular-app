@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ItemEventData } from '@nativescript/core/ui/list-view';
 
 
 @Component({
   selector: 'ns-current-challenge',
-  templateUrl:'./current-challenge.component.html',
+  templateUrl: './current-challenge.component.html',
   styleUrls: ['./current-challenge.component.css'],
-  moduleId:module.id
+  moduleId: module.id
 })
-export class CurrentChallengeComponent{
+export class CurrentChallengeComponent {
+  @Input() challengeTitle :string = '';
+  // @Input() challenges :string[] = [];
 
-  challengeDescription = '';
-  currentChallenge = '';
 
-  onSetChallenge() {
-    this.currentChallenge =this.challengeDescription
-  }
- }
+  onItemTap(args: ItemEventData) {
+console.log(args) }
+}
