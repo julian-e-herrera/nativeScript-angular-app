@@ -1,15 +1,17 @@
 <!-- <StackLayout>
+  <router-outlet></router-outlet>
 </StackLayout> -->
-
-<FlexboxLayout flexDirection="column">
-  <ns-challenge-edit (input)="onChallengeInput($event)"></ns-challenge-edit>
-  <ns-current-challenge
-    [challengeTitle]="activeChallenge"
-  ></ns-current-challenge>
-</FlexboxLayout>
-<!-- <ns-stack></ns-stack> -->
-<!-- <ns-flexbox></ns-flexbox> -->
-<!-- <ns-flexbox-assignment></ns-flexbox-assignment> -->
-<!-- <ns-grid></ns-grid> -->
-<!-- <ns-grid-assignment></ns-grid-assignment> -->
-<!-- <ns-absolute></ns-absolute> -->
+<RadSideDrawer>
+  <StackLayout tkDrawerContent>
+    <Button
+      text="Logout"
+      class="btn"
+      nsRouterLink="/"
+      [clearHistory]="true"
+      (tap)="onLogout()"
+    ></Button>
+  </StackLayout>
+  <StackLayout tkMainContent>
+    <page-router-outlet></page-router-outlet
+  ></StackLayout>
+</RadSideDrawer>

@@ -1,26 +1,22 @@
-<!-- <ListView
-  [items]="challenges"
-  (itemTap)="onItemTap($event)"
-  iosEstimatedRowHeight="65"
->
-  <ng-template let-challenge="item" let-i="index">
-    <GridLayout rows=" 40,auto" columns="50,*">
-      <Label [text]="i" row="0" col="0" rowSpan="2"></Label>
-      <Label [text]="challenge" row="0" col="1"></Label>
-      <Label text="Item content row 2" row="1" col="1"></Label>
-    </GridLayout>
-  </ng-template>
-</ListView> -->
-
+<ns-action-bar title="Current Challenge" [showBackButton]="false">
+  <ActionItem
+    ios.position="right"
+    android.position="actionBar"
+    nsRouterLink="/challenges/replace"
+    ><Label text="Replace"></Label
+  ></ActionItem>
+  <ActionItem
+    ios.position="right"
+    android.position="actionBar"
+    nsRouterLink="/challenges/edit"
+    pageTransition="slideLeft"
+    ><Label text="Edit"></Label> </ActionItem
+></ns-action-bar>
 <StackLayout>
-  <!-- <TextField
-    class="form-control"
-    hint="Challenge Title"
-    [(ngModel)]="challengeTitle"
-  ></TextField> -->
   <Label
     class="title"
-    [text]="challengeTitle"
-    horizontalAligment="center"
+    text="The current challenge"
+    horizontalAlignment="center"
   ></Label>
+  <Button text="Change Status" (tap)="onChangeStatus()"></Button>
 </StackLayout>

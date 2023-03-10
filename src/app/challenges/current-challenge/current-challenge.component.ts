@@ -1,5 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { ItemEventData } from '@nativescript/core/ui/list-view';
+import { Component, ViewContainerRef } from '@angular/core';
+import { ModalDialogService } from '@nativescript/angular';
+import { DayModalComponent } from '../day-modal/day-modal.component';
+import { UIService } from '../../shared/ui.service';
+
+
 
 
 @Component({
@@ -9,10 +13,19 @@ import { ItemEventData } from '@nativescript/core/ui/list-view';
   moduleId: module.id
 })
 export class CurrentChallengeComponent {
-  @Input() challengeTitle :string = '';
-  // @Input() challenges :string[] = [];
+
+  constructor(private modalDialog: ModalDialogService,private vcRef:ViewContainerRef,private uiService:UIService) { }
 
 
-  onItemTap(args: ItemEventData) {
-console.log(args) }
+onChangeStatus() {
+  this.modalDialog.showModal(DayModalComponent, {
+    fullscreen: true,
+    viewContainerRef: this.uiService.getRootVCRef() ?
+      this.uiService.getRootVCRef() : this.vcRef,
+    context:{date: new Date()}
+  })
+  }
+
+
+
 }
