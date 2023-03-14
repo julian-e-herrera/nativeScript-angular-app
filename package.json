@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~15.1.0",
+    "@angular/cli": "^15.2.2",
     "@angular/common": "~15.1.0",
     "@angular/compiler": "~15.1.0",
     "@angular/core": "~15.1.0",
@@ -12,10 +13,11 @@
     "@angular/platform-browser": "~15.1.0",
     "@angular/platform-browser-dynamic": "~15.1.0",
     "@angular/router": "~15.1.0",
-    "@nativescript/angular": "^15.0.0",
+    "@nativescript/angular": "^15.2.0",
     "@nativescript/core": "~8.4.0",
     "@nativescript/ios": "^8.4.1",
     "@nativescript/theme": "~3.0.2",
+    "nativescript-theme-core": "1.0.6",
     "nativescript-ui-sidedrawer": "^14.2.1",
     "rxjs": "~7.6.0",
     "zone.js": "~0.12.0"

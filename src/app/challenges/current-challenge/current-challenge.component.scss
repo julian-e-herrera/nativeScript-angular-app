@@ -1,0 +1,58 @@
+@import "~@nativescript/theme/core";
+@import '../../../themes/colors';
+
+.title {
+  font-size: 26;
+  text-align: center;
+  color: #7c015d;
+  font-weight: bold;
+  margin-top: 10;
+}
+
+.h1{
+  color: $primary;
+}
+
+.page{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20;
+}
+
+
+.day{
+  justify-content: center;
+  align-items: center;
+  margin: 10;
+  width:50;
+  height:50;
+  border-color: $primary;
+  border-width: 1;
+  border-radius: 50%;
+  color: $primary;
+}
+
+.week-day-label {
+  color: $secondary;
+  font-weight: bold;
+  margin: 15 0;
+}
+.completed {
+  background: $success;
+  color: white;
+}
+.failed{
+  background: $fail;
+  color: white;
+}
+
+.not-settable{
+  background: #ccc;
+  color:#535353;
+}
+
+
+.fa{
+  font-family: 'Font-Awesome','FontAwesome';
+}

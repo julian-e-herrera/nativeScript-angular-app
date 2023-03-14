@@ -15,4 +15,9 @@ export class DayModalComponent implements OnInit {
     this.loadedDate =  (this.modalParams.context as {date:Date}).date
   }
 
+
+
+  onHandlerInput(action:'complete'|'fail'|'cancel') {
+   this.modalParams.closeCallback(action)
+ }
 }

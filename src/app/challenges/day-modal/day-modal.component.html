@@ -1,5 +1,5 @@
 <FlexboxLayout>
-  <Label [text]="loadedDate | date"></Label>
-  <Button class="btn" text="Completed"></Button>
-  <Button class="btn" text="Failed"></Button>
+  <ns-challenge-actions
+    (actionSelect)="onHandlerInput($event)"
+  ></ns-challenge-actions>
 </FlexboxLayout>

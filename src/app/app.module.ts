@@ -4,20 +4,23 @@ import { NativeScriptFormsModule } from '@nativescript/angular';
 import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
 
 import { AppComponent } from './app.component';
-import { CurrentChallengeComponent } from './challenges/current-challenge/current-challenge.component';
-import { ChallengeEditComponent } from './challenges/challenge-edit/challenge-edit.component';
+
 import { AuthComponent } from './auth/auth.component';
-import { TodayComponent } from './challenges/today/today.component';
+
 import { AppRoutingModule } from './app-routing.module';
-import {ActionBarCustomComponent} from './shared/ui/action-bar/action-bar.component'
+
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
-import { ChallengeTabsComponent } from './challenges/challenge-tabs/challenge-tabs.component';
+
 import { DayModalComponent } from './challenges/day-modal/day-modal.component';
+import { ChallengesRoutingModule } from './challenges/challenges-routing.module';
+import { ChallengesModule } from './challenges/challenges.module';
+import { SharedModule } from './shared/shared.module';
+import { ChallengeActionsModule } from './challenges/challenge-actions/challenge-actions.module';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -25,16 +28,15 @@ import { DayModalComponent } from './challenges/day-modal/day-modal.component';
     NativeScriptModule,
     NativeScriptFormsModule,
     AppRoutingModule,
-    NativeScriptUISideDrawerModule
+    NativeScriptUISideDrawerModule,
+    ChallengesRoutingModule,
+    ChallengesModule,
+    SharedModule,
+    ChallengeActionsModule
   ],
   declarations: [
     AppComponent,
-    CurrentChallengeComponent,
-    ChallengeEditComponent,
     AuthComponent,
-    TodayComponent,
-    ActionBarCustomComponent,
-    ChallengeTabsComponent,
     DayModalComponent
   ],
   providers: [],

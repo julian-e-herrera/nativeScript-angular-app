@@ -13,10 +13,19 @@
   showBackButton="true"
   hasMenu="false"
 ></ns-action-bar>
-<FlexboxLayout justifyContent="space-between">
+<FlexboxLayout class="form">
   <Label
     class="title"
     text="The edit page"
     horizontalAlignment="center"
   ></Label>
+  <StackLayout class="input-field">
+    <Label class="label" text="title"> </Label>
+    <TextField class="input"></TextField>
+  </StackLayout>
+  <StackLayout class="input-field">
+    <Label class="label" text="Description"> </Label>
+    <TextField class="input"></TextField>
+  </StackLayout>
+  <Button class="btn btn-primary" text="Save"></Button>
 </FlexboxLayout>

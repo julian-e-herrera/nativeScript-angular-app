@@ -8,7 +8,7 @@ import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
   selector: 'ns-app',
   moduleId: module.id,
   templateUrl: './app.component.html',
-
+  styleUrls:['../../_app.common']
 })
 export class AppComponent implements OnInit,AfterViewInit, OnDestroy{
   @ViewChild(RadSideDrawerComponent) drawerComponent:RadSideDrawerComponent

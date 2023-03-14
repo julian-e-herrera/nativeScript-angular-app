@@ -1,0 +1,26 @@
+@import "~@nativescript/theme/core";
+@import '../../../themes/colors';
+
+FlexboxLayout{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300;
+  }
+.btn {
+
+    width: 300;
+  }
+  .btn-success {
+    background: $success;
+    border-color: $success;
+    color: #ffffff;
+    // background: rgb(15, 170, 28);
+    // border-color: rgb(15, 170, 28);
+  }
+  .btn-fail{
+    background: $fail;
+    border-color: $fail;
+    color: #ffffff;
+
+  }

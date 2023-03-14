@@ -1,0 +1,82 @@
+// @import '@nativescript/theme/css/core.css';
+/* @import '@nativescript/theme/css/default.css'; */
+@import "~@nativescript/theme/core";
+
+@import './src/themes/colors';
+$btn-color: $primary;
+
+//@import '~/nativescript-theme-core/scss/index';
+
+
+.action-bar {
+  background: $primary;
+  color: rgb(236, 233, 233)
+}
+
+.form{
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.input-field {
+  width: 80%;
+
+  .label{
+  color:$primary;
+  font-weight: bold;
+}
+.input{
+  border-bottom-color:$primary ;
+  border-bottom-width:2 ;
+  width: 100%;
+}
+
+}
+.drawer-container {
+  background: linear-gradient(140deg,#2b0c72,#5c3fa0);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20;
+}
+
+.h1 {
+   font-weight: bold;
+   color: $primary;
+}
+
+.fa{
+  font-family: 'Font-Awesome','FontAwesome';
+}
+
+// Button.-primary {
+//   font-size: 18;
+// }
+
+// .form-control{
+//   border-bottom-color: purple;
+//   border-bottom-width: 2;
+//   margin: 5 0;
+//   font-size: 20;
+//   padding: 8 4;
+// }
+
+.btn {
+    border-width: 1;
+    width: 100%;
+    padding:5 10 ;
+    border-radius: 30%;
+    margin: 5 0;
+    box-shadow: 8 8 8  rgb(165, 129, 165);
+    opacity: calc(1);
+    color: rgb(211, 39, 39);
+}
+
+.btn-flat {
+  background: transparent;
+  border-color: transparent;
+  border-width: 1;
+  color: $primary;
+}

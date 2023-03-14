@@ -1,4 +1,4 @@
-<ActionBar [title]="title" (loaded)="onLoadedActionBar()">
+<ActionBar [title]="title" (loaded)="onLoadedActionBar()" class="action-bar">
   <NavigationButton
     text="Back"
     android.systemIcon="ic_menu_back"
@@ -15,7 +15,7 @@
     ios.position="left"
     (tap)="onToggleMenu()"
   >
-    <Label text="MENU"></Label>
+    <Label text="&#xf0c9;" class="fa m-5"></Label>
   </ActionItem>
 
   <ng-content></ng-content>

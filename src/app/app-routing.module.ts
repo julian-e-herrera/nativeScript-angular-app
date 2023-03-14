@@ -1,33 +1,23 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { Routes } from '@angular/router';
+
 import { NativeScriptRouterModule } from '@nativescript/angular';
 
 
 import { AuthComponent } from './auth/auth.component';
-import { Routes } from '@angular/router';
-import { TodayComponent } from './challenges/today/today.component';
-import { CurrentChallengeComponent } from './challenges/current-challenge/current-challenge.component';
-import { ChallengeEditComponent } from './challenges/challenge-edit/challenge-edit.component';
-import { ChallengeTabsComponent } from './challenges/challenge-tabs/challenge-tabs.component';
+
+
 
 const routes: Routes = [
     { path: '', component: AuthComponent },
-    { path: 'challenges',  children: [
-      {
-        path: 'tabs',
-        component: ChallengeTabsComponent,
-        children: [
-           { path: 'today', component: TodayComponent,outlet:'today' },
-           { path: 'current-challenge', component:CurrentChallengeComponent ,outlet:'currentChallenge' },
-        ]
-      },
-      { path: ':mode', component: ChallengeEditComponent },
-      { path: '', redirectTo:'/challenges/tabs' ,pathMatch:'full'},
-   ]
+    { path: 'challenges',  loadChildren: () => import('./challenges/challenges.module')
+    .then(m => m.ChallengesModule)//'~/app/challenges/challenges.module#ChallengesModule'
   },
 ];
 
 @NgModule({
   imports: [NativeScriptRouterModule.forRoot(routes)],
-  exports: [NativeScriptRouterModule]
+  exports: [NativeScriptRouterModule],
+  schemas: [NO_ERRORS_SCHEMA],
 })
 export class AppRoutingModule {}
