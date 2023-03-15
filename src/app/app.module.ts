@@ -21,6 +21,7 @@ import { ChallengesRoutingModule } from './challenges/challenges-routing.module'
 import { ChallengesModule } from './challenges/challenges.module';
 import { SharedModule } from './shared/shared.module';
 import { ChallengeActionsModule } from './challenges/challenge-actions/challenge-actions.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -32,7 +33,8 @@ import { ChallengeActionsModule } from './challenges/challenge-actions/challenge
     ChallengesRoutingModule,
     ChallengesModule,
     SharedModule,
-    ChallengeActionsModule
+    ChallengeActionsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
