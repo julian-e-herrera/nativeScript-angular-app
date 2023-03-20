@@ -1,6 +1,10 @@
 @import "~@nativescript/theme/core";
 @import '../../../themes/colors';
 
+.fa{
+  font-family: 'Font-Awesome','FontAwesome';
+}
+
 FlexboxLayout{
     flex-direction: column;
     justify-content: center;
@@ -10,17 +14,46 @@ FlexboxLayout{
 .btn {
 
     width: 300;
+    border-radius: 20;
   }
   .btn-success {
-    background: $success;
+    background-color: $success;
     border-color: $success;
     color: #ffffff;
     // background: rgb(15, 170, 28);
     // border-color: rgb(15, 170, 28);
+    border-width: 1;
   }
   .btn-fail{
-    background: $fail;
+    background-color: $fail;
     border-color: $fail;
     color: #ffffff;
+    border-width: 1;
+  }
+  .btn-alt{
 
+    font-size: 30;
+    margin-top: 10;
+
+  }
+  .btn-success:disabled,.btn-fail:disabled {
+    background-color:#ccc;
+    border-color: #777777;
+    border-color: #ccc;
+  }
+
+
+  @keyframes slide-up {
+    from{
+      transform: translateY(30);
+    }
+    to{
+      transform: translateY(0);
+    }
+  }
+  .animate-button{
+    animation-name:slide-up;
+    animation-iteration-count: 1;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
   }

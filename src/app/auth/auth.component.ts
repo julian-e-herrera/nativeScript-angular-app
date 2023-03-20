@@ -64,9 +64,12 @@ export class AuthComponent implements OnInit {
 
     const email = this.form.get('email').value;
     const password = this.form.get('password').value;
+
+    this.emailControlIsValid = true;
+    this.passwordControlIsValid = true;
     this.form.reset();
     if (this.isLoging) { console.log('Logging...' )}
-
+    this.router.navigate(['/challenges']);
   }
 
 }

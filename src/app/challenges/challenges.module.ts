@@ -23,6 +23,7 @@ import { ChallengeActionsModule } from './challenge-actions/challenge-actions.mo
     SharedModule,
     ChallengeActionsModule
   ],
+
   schemas: [NO_ERRORS_SCHEMA],
 })
 

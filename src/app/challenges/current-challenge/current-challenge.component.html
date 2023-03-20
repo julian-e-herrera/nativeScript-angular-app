@@ -3,6 +3,7 @@
     ios.position="right"
     android.position="actionBar"
     nsRouterLink="/challenges/replace"
+    pageTransition="slideLeft"
     ><Label text="&#xf0fe;" android:class="fa p-5" android:fontSize="24"></Label
   ></ActionItem>
   <ActionItem
@@ -10,6 +11,7 @@
     android.position="actionBar"
     nsRouterLink="/challenges/edit"
     pageTransition="slideLeft"
+    *ngif="currentChallenge"
     ><Label
       text="&#xf044;"
       android:class="fa p-5"
@@ -18,20 +20,33 @@
 ></ns-action-bar>
 <ScrollView>
   <FlexboxLayout class="page">
+    <StackLayout *ngIf="!currentChallenge">
+      <Label class="h1 text-center" text="No challenge found!!!"></Label>
+      <Button
+        class="btn btn-primary"
+        text="Create One!"
+        nsRouterLink="/challenges/replace"
+        pageTransition="slideLeft"
+      ></Button>
+    </StackLayout>
     <!-- <Label
     class="title"
     text="The current challenge"
     horizontalAlignment="center"
   ></Label>
   <Button text="Change Status" (tap)="onChangeStatus()"></Button> -->
-    <StackLayout>
-      <Label class="h1 text-center" text="Take A walk"></Label>
+    <StackLayout *ngIf="currentChallenge">
+      <Label class="h1 text-center" [text]="currentChallenge.title"></Label>
       <Label
         class="body text-center"
-        text="Walk for at least 20 minutes on every day of the week"
+        [text]="currentChallenge.description"
       ></Label
     ></StackLayout>
-    <GridLayout rows="auto,*,*,*,*,*,*" columns="*,*,*,*,*,*,*">
+    <GridLayout
+      rows="auto,*,*,*,*,*,*"
+      columns="*,*,*,*,*,*,*"
+      *ngIf="currentChallenge"
+    >
       <Label
         class="text-center week-day-label"
         width="100%"
@@ -41,11 +56,16 @@
         [col]="i"
       ></Label>
       <FlexboxLayout
+        *ngFor="let day of currentChallenge.days; let start = index"
         class="day"
-        *ngFor="let day of days; let start = index"
+        [ngClass]="{
+          'not-settable': !getIsSettable(day.dayInMonth),
+          completed: day.status === 1,
+          failed: day.status === 2
+        }"
         [row]="getRow(start, day)"
         [col]="day.dayInWeek"
-        (tap)="onChangeStatus()"
+        (tap)="onChangeStatus(day)"
       >
         <Label [text]="day.dayInMonth"></Label
       ></FlexboxLayout>

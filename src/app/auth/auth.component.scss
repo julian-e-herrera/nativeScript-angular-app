@@ -20,7 +20,7 @@
   }
   .input{
     border-bottom-color:$primary ;
-    border-bottom-width:2 ;
+    border-bottom-width:1 ;
     width: 100%;
     color: black;
   }
@@ -29,7 +29,7 @@
     background: rgb(141, 9, 141);
     border-color: rgb(141, 9, 141);
     color: rgb(255, 252, 252);
-
+    border-radius: 20;
 
   }
 
@@ -44,7 +44,7 @@
     color: red;
   }
   .btn-flat {
-    background: transparent;
+    background: rgb(216, 214, 214);
     border-color: transparent;
     border-width: 1;
     color: $primary;

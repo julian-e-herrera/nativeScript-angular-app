@@ -1,0 +1,24 @@
+@import "~@nativescript/theme/core";
+@import '../../../themes/colors';
+
+
+.page{
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.h1 {
+    font-weight: bold;
+    color: $primary;
+    font-family: 'Oswald','Oswald-Regular','Oswald-Bold';
+ }
+ .fa{
+    font-family: 'Font-Awesome','FontAwesome';
+  }
+  .btn {
+    background: rgb(141, 9, 141);
+    border-color: rgb(141, 9, 141);
+    color: rgb(255, 252, 252);
+
+
+  }
