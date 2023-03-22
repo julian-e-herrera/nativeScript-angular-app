@@ -1,4 +1,7 @@
 /* Add mobile styles for the component here.  */
+@import "~@nativescript/theme/core";
+@import '../../../themes/colors';
+
 FlexboxLayout{
     flex-direction: column;
     justify-content: center;

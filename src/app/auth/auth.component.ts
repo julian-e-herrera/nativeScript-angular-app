@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { RouterExtensions } from '@nativescript/angular';
 import { TextField } from '@nativescript/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'ns-auth',
@@ -17,13 +18,14 @@ export class AuthComponent implements OnInit {
   emailControlIsValid = true;
   passwordControlIsValid = true;
   isLoging = true;
+  isLoading = false;
   @ViewChild('passwordEl') passwordEl: ElementRef<TextField>
   @ViewChild('emailEl') emailEl: ElementRef<TextField>
 
 
 
 
-  constructor(private router:RouterExtensions) { }
+  constructor(private router:RouterExtensions,private authService:AuthService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -64,12 +66,28 @@ export class AuthComponent implements OnInit {
 
     const email = this.form.get('email').value;
     const password = this.form.get('password').value;
-
+    this.form.reset();
     this.emailControlIsValid = true;
     this.passwordControlIsValid = true;
-    this.form.reset();
-    if (this.isLoging) { console.log('Logging...' )}
-    this.router.navigate(['/challenges']);
+    this.isLoading = true;
+    if (this.isLoging) {
+      this.authService.login(email, password).subscribe(resData => {
+        this.isLoading = false;
+        this.router.navigate(['/challenges']);
+      }, err => {
+        console.log(err)
+        this.isLoading = false;
+      });
+    } else {
+      this.authService.signUp(email, password).subscribe(resData => {
+        this.isLoading = false;
+        this.router.navigate(['/challenges']);
+      }, err => {
+        console.log(err)
+        this.isLoading = false;
+      });
+    }
+
   }
 
 }
